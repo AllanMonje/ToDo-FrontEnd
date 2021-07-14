@@ -1,0 +1,67 @@
+
+<div class="overlay"></div>
+<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+  <source src="assets/mp4/bg.mp4" type="video/mp4">
+</video>
+
+<div class="masthead">
+  <div class="masthead-bg"></div>
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="col-12 my-auto">
+        <div class="masthead-content text-white py-5 py-md-0">
+          
+    <form ngNativeValidate #form style="margin: 80px;" method="post">
+      <h1 class="text-info">Login</h1>
+      <div class="text-center">
+        <img src="assets/img/usuario.png" class="rounded" width="100" height="100" style="margin: 40px;">
+      </div>
+
+      <div class="form-group">
+      <input
+        type="email"
+        [(ngModel)]="Usuario.email"
+        [ngModelOptions] = "{standalone:true}"
+        name="email"
+        placeholder="Email"
+        required="true"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+      />
+      </div>
+
+      <div class="form-group">
+      <input
+        type="password"
+        [(ngModel)]="Usuario.password"
+        [ngModelOptions] = "{standalone:true}"
+        name="password"
+        placeholder="Password"
+        required="true"
+        minlength="8"
+        maxlength="8"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,8}"
+      />
+      </div>
+
+      <div class="input-group-append">
+      <button type="submit" (click)="form.checkValidity?login():null" class="btn btn-secondary">Iniciar Sesión</button>
+      </div>
+
+      <div class="text-right">
+      <a [routerLink]="['/register']" class="nav-link">Registrate</a>
+      </div>
+
+      <div class="text-right">
+      <a  [routerLink]="['/olvido']">¿Olvidaste tu contraseña?</a>
+      </div>
+    </form>
+    
+    <div class="input-group input-group-newsletter">
+      <div></div>
+      
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
